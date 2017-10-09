@@ -1,0 +1,21 @@
+c<div >
+
+      <div >
+        <div >
+          <label for="station">Station: </label>
+          <input id="station" type="text" name="station" [(ngModel)]="station" >
+        </div>
+      </div>
+      <div class="row">
+        <div >
+          <label for="arrival">Arrival: </label>
+          <input  id="arrival" type="date" name="arrival" [(ngModel)]="arrival" >
+        </div>
+        <div class="input-field col s6">
+          <label for="departure">Departure: </label>
+          <input type="date" name="departure" [(ngModel)]="departure">
+        </div>
+      </div>
+      <button  type="submit" (click)="addNew(station, arrival, departure)" >Submit</button>
+
+  </div>

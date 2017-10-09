@@ -1,0 +1,14 @@
+<h2>My Roster</h2>
+<button type="button" (click)="toggleForm()">{{buttonName}}</button>
+
+<div *ngIf="showForm">
+  <app-layover-new></app-layover-new>
+</div>
+
+<ul>
+  <li *ngFor="let layover of roster">
+    <app-layover-card [city]="layover.city"[station]="layover.station"[arrival]="layover.arrival"
+    [departure]="layover.departure" [id]="layover._id"></app-layover-card>
+
+  </li>
+</ul>

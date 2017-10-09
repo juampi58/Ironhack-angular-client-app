@@ -1,0 +1,6 @@
+<a *ngIf="!user"[routerLink] ="['/cities', city]">{{city}}</a>
+<a *ngIf="user" [routerLink] ="['/users', user._id ]">{{user.name}}</a>
+<h3>{{station}}</h3>
+<p>Arrival: {{arrival}}</p>
+<p>Departure: {{departure}}</p>
+<a *ngIf="!user" [routerLink] ="['/layovers', id]">Matches</a>

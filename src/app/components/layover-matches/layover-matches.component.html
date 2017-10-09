@@ -1,0 +1,9 @@
+<h2>In {{city}} catch up with:</h2>
+
+<ul>
+  <li *ngFor="let layover of matches">
+    <app-layover-card [user]="layover.creator_id" [city]="layover.city"[station]="layover.station"
+    [arrival]="layover.arrival"[departure]="layover.departure" ></app-layover-card>
+
+  </li>
+</ul>
