@@ -1,14 +1,18 @@
-<h2>My Roster</h2>
-<button type="button" (click)="toggleForm()">{{buttonName}}</button>
 
-<div *ngIf="showForm">
-  <app-layover-new></app-layover-new>
+<div class="container">
+
+  <div class="container ml-2 my-2">
+    <h2>My Roster</h2>
+    <button type="button" (click)="toggleForm()" class="btn btn-primary">{{buttonName}}</button>
+  </div>
+
+  <div class="continer" *ngIf="showForm">
+    <app-layover-new></app-layover-new>
+  </div>
+  <div class="container" >
+    <div class="row">
+      <app-layover-card *ngFor="let layover of roster" [city]="layover.city"[station]="layover.station"[arrival]="layover.arrival"
+      [departure]="layover.departure" [id]="layover._id"></app-layover-card>
+    </div>
+  </div>
 </div>
-
-<ul>
-  <li *ngFor="let layover of roster">
-    <app-layover-card [city]="layover.city"[station]="layover.station"[arrival]="layover.arrival"
-    [departure]="layover.departure" [id]="layover._id"></app-layover-card>
-
-  </li>
-</ul>

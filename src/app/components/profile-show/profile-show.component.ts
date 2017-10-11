@@ -10,15 +10,18 @@ import{ ProfileService } from '../../services/profile.service'
 })
 export class ProfileShowComponent implements OnInit {
 
-  constructor(private profileService : ProfileService, private route: ActivatedRoute) { }
   profile: Object;
+
+  constructor(private profileService : ProfileService, private route: ActivatedRoute) { }
+
   ngOnInit() {
     this.get()
   }
+
   get(){
     this.route.params.subscribe((params)=>{
       this.profileService.get(params['id'])
-      .subscribe((user)=>this.profile=user);      
+        .subscribe((user) => this.profile = user);
     });
 
   }

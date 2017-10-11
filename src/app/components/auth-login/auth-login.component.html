@@ -1,3 +1,22 @@
-<p>
-  auth-login works!
-</p>
+<form (ngSubmit)="submit(form)" #form="ngForm" class="container my-3" id="needs-validation" novalidate>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom02">Username</label>
+      <input name="username"  [(ngModel)]="username" type="text" class="form-control" id="validationCustom02"  required>
+      <div class="invalid-feedback">
+        Please provide a valid e-mail.
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">Password</label>
+      <input name="password"  [(ngModel)]="password" type="text" class="form-control" id="validationCustom03"  required>
+      <div class="invalid-feedback">
+        Please provide a valid password.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Login</button>
+  <p class="my-2 h7" >Click <a href="#">here </a>to create an account</p>
+</form>

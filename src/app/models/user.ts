@@ -5,10 +5,10 @@ export class User {
   contactNumber:string;
   name:string;
   gender:string;
-  dateOfBirth:Date;
+  dateOfBirth:string;
   nationality:string;
   languagesSpoken:string[];
-  airline:string;
+  airlineCode:string;
   base: string;
   layovers: Object[];
   reviews: Object[];

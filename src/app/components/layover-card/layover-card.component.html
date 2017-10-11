@@ -1,6 +1,15 @@
-<a *ngIf="!user"[routerLink] ="['/cities', city]">{{city}}</a>
-<a *ngIf="user" [routerLink] ="['/users', user._id ]">{{user.name}}</a>
-<h3>{{station}}</h3>
-<p>Arrival: {{arrival}}</p>
-<p>Departure: {{departure}}</p>
-<a *ngIf="!user" [routerLink] ="['/layovers', id]">Matches</a>
+
+  <div class="col-sm-12">
+    <div class="card text-center m-2" style="width: 250px;">
+      <div class="card-body">
+        <h4 class="card-title">
+          <a *ngIf="!user"[routerLink] ="['/cities', city]">{{city}}({{station}})</a>
+          <a *ngIf="user" [routerLink] ="['/users', user._id ]">{{user.name}}</a>
+        </h4>
+        <h3 *ngIf="user" >{{station}}</h3>
+        <p>Arrival: {{arrival}}</p>
+        <p>Departure: {{departure}}</p>
+        <a *ngIf="!user" [routerLink] ="[id]" class="btn btn-primary">Matches</a>
+      </div>
+    </div>
+  </div>

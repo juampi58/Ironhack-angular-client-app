@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AuthLoginComponent } from './components/auth-login/auth-login.component';
 import { AuthSignupComponent } from './components/auth-signup/auth-signup.component';
 import { AuthLogoutComponent } from './components/auth-logout/auth-logout.component';
@@ -30,13 +31,14 @@ import { ProfileService } from './services/profile.service';
 import { ThingsToDoService } from './services/thingsToDo.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '1/layovers', pathMatch: 'full' },
-  { path: 'login', component: PageAuthComponent },
-  { path: 'signup', component: PageAuthComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: AuthLoginComponent },
+  { path: 'signup', component: AuthSignupComponent },
   { path: 'users/:id', component: PageProfileComponent },
   { path: 'users/:id/edit', component: ProfileEditComponent },
   { path: 'users/:id/layovers', component: PageLayoversComponent },
-  { path: 'layovers/:id', component: LayoverMatchesComponent },
+  { path: 'users/:id/layovers/:layoverId', component: LayoverMatchesComponent },
+  { path: 'users/:id/:userId', component: PageProfileComponent },
   { path: 'cities', component: PageCitiesComponent },
   { path: 'playground', component: PagePlaygroundComponent }
 ];
@@ -61,6 +63,7 @@ const routes: Routes = [
     PagePlaygroundComponent,
     CityThingsToDoListComponent,
     CityThingsToDoFilterComponent,
+    NavBarComponent,
   ],
 
   imports: [

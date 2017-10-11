@@ -22,7 +22,7 @@ export class LayoverMatchesComponent implements OnInit {
   getList(){
     console.log('hola')
     this.route.params.subscribe((params)=>{
-      this.layoverService.getMatches(params['id'])
+      this.layoverService.getMatches(params['layoverId'])
       .subscribe((list) => {
         this.matches = list;
         this.city= list[0].city;
